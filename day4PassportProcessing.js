@@ -91,3 +91,28 @@ const test = [
     hgt: "59in",
   },
 ];
+
+//Function checks for valid keys in each batch of data and counts as valid if it does include all the requirements keys.
+const passportProcessing = (data) => {
+  let valid = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    let batch = data[i];
+    let keys = Object.keys(batch);
+
+    if (
+      keys.includes("ecl") &&
+      keys.includes("pid") &&
+      keys.includes("eyr") &&
+      keys.includes("hcl") &&
+      keys.includes("byr") &&
+      keys.includes("iyr") &&
+      keys.includes("hgt")
+    )
+      valid++;
+  }
+  return valid;
+}; //190
+
+//console.log(passportProcessing(test));
+console.log(passportProcessing(passports));
