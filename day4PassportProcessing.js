@@ -249,3 +249,13 @@ const valid_eye_color = (strval) => {
   const accepted = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
   return accepted.indexOf(strval) >= 0;
 };
+//Check is value is correct
+const valid_passport_id = (strval) => {
+  if (!strval) return false;
+  if (strval.length !== 9) return false;
+  strval.split("").map((c) => parseInt(c));
+  return true;
+};
+
+console.log(passportProcessing(test));
+//console.log(passportProcessing(passports));
