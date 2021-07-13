@@ -214,7 +214,7 @@ const passportProcessing = (data) => {
 
   return valid;
 };
-
+//Take a string value, and check if the value is in the range bwt min & max
 const valid_int = (strval, min, max) => {
   if (!strval) return false;
   const val = parseInt(strval);
