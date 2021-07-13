@@ -232,3 +232,14 @@ const valid_height = (strval) => {
   }
   return false;
 };
+//Check if the hair color has the correct characters
+const valid_hair_color = (strval) => {
+  if (!strval) return false;
+  if (strval.startsWith("#") && strval.length === 7) {
+    return (
+      strval.split("").filter((c) => "1234567890abcdef".indexOf(c) < 0)
+        .length === 1
+    );
+  }
+  return false;
+};
