@@ -243,3 +243,9 @@ const valid_hair_color = (strval) => {
   }
   return false;
 };
+//Check if the eye color has the correct characters
+const valid_eye_color = (strval) => {
+  if (!strval) return false;
+  const accepted = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
+  return accepted.indexOf(strval) >= 0;
+};
