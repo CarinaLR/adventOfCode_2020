@@ -220,3 +220,15 @@ const valid_int = (strval, min, max) => {
   const val = parseInt(strval);
   return min <= val && val <= max;
 };
+//Check if the height has the correct characters
+const valid_height = (strval) => {
+  if (!strval) return false;
+  if (strval.endsWith("cm")) {
+    const [h] = strval.split("cm");
+    return valid_int(h, 150, 193);
+  } else if (strval.endsWith("in")) {
+    const [h] = strval.split("in");
+    return valid_int(h, 59, 76);
+  }
+  return false;
+};
