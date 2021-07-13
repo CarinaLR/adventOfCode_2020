@@ -214,3 +214,9 @@ const passportProcessing = (data) => {
 
   return valid;
 };
+
+const valid_int = (strval, min, max) => {
+  if (!strval) return false;
+  const val = parseInt(strval);
+  return min <= val && val <= max;
+};
